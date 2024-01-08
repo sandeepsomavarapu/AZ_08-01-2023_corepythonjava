@@ -1,0 +1,184 @@
+
+
+
+Language:
+		communication with human
+		
+				english,telugu,tamil,kannada,hindi......
+		
+Programming Languge:
+===================		
+		communication with machine
+	
+		set of programs 
+
+		c,c++,java,python,.net,....
+
+
+	POP								OOP					
+	B,BCPL,C,COBOL,PHOTON...	c++,java,python,.net,....
+	
+			performance			inheritance,polymorphisam
+			security			abstraction,encapsulation
+		
+Why python
+
+Python--1991	feb 20th 1991
+
+	guido van russam
+
+		1.x
+		2.x
+		3.x
+
+HelloWorld.java
+
+		
+class HelloWorld
+{
+public static void main(String args[])
+{
+	System.out.println("welcome to java .....");
+}
+
+}	53 keywords
+
+english 26
+compile--		.class
+execute--
+		
+
+	33 keywords
+
+
+python-->the coplete monty python's circus
+
+
+		1.Funtional Programming	from C Language
+		2.Object Oriented Programming feature from C++
+		3.Shell Scrpting features from perl & shell script
+		4.Modular Programming
+		
+		C,ABC-->syntax
+
+
+	1.desktop applications	(tkinter)
+	2.web applicationss		django/flask
+	3.database applications	(PDBC)
+	4.network programming
+	5.gaming
+	6.DA
+	7.IOT
+	8.ML
+	9.AI
+
+
+Features:
+=========
+
+1)simple and easy to learn 
+2)free source and open source  jython
+3)High level Programming language
+4)platform independent 
+5)portability 
+6)dynamic typed 		a=123		int a=123;//static typed 
+7)interpreted
+8)rich library set
+9)interpreted 
+
+
+
+identifiers:
+===========
+any name in python will call it as identifier
+
+	varname,classname,method,interface,objname....
+	
+			a-z
+			A-Z
+			0-9
+			_
+	
+>>> import keyword
+>>> keyword.kwlist
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 
+'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 
+'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+
+Datatypes:
+==========
+
+
+		sandeep
+		number 12312312312312
+		23.234
+		
+	1)int
+	2)float
+	3)complex
+	4)bool
+	5)str
+	
+	6)List
+	7)Tuple
+	8)Set
+	9)Frozenset
+	10)dict
+	11)None
+
+
+
+	type()
+	id()
+	print()
+	
+	typecasting
+	int()
+	float()
+	complex()
+	str()
+	bool()
+
+
+*** Fundamental datatypes are immutable
+
+
+
+
+	List
+	=====
+		To store group of values/objects as a single entity 
+	 
+	 1)duplicates are allowed
+	 2)insertion order is preserved 
+	 3)Both homogeneous and heterogeneous objects are allowed 
+	 4)growable in nature 
+	 5)[] square brakets
+	 6)list is mutable(append,remove)
+	 
+	 Tuple:
+	 ========
+	 	To store group of values/objects as a single entity 
+	 
+	 1)duplicates are allowed
+	 2)insertion order is preserved 
+	 3)Both homogeneous and heterogeneous objects are allowed 
+	 4)() paranthesis
+	 5)tuple is imutable	
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 s
+

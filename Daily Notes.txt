@@ -168,17 +168,55 @@ Datatypes:
 	 5)tuple is imutable	
 	 
 	 
+	Set:
+	=====
+			To store group of values/objects as a single entity 
+	 
+	 1)duplicates are not allowed
+	 2)insertion order is not preserved 
+	 3)Both homogeneous and heterogeneous objects are allowed 
+	 4)growable in nature 
+	 5){} curly braces
+	 6)set is mutable(add,remove)
+	 
+	 FrozenSet:
+	 ==========
+	 	To store group of values/objects as a single entity 
+	 
+	 1)duplicates are not allowed
+	 2)insertion order is not preserved 
+	 3)Both homogeneous and heterogeneous objects are allowed 
+	 4)not growable in nature 
+	 5)({}) curly braces
+	 6)frozenset is imutable
+	 
+	 
+	 dict:
+	 =====
+	 1)group of objects as a key,value pair
+	 2){}
+	 3)duplicate keys are not allowed and values can be duplicate
+	 4)mutable
+	 5)growable in nature 
 	 
 	 
 	 
 	 
+String :
+===========
+		sequence chars / group of chars-->string 
+			
+				name="Astrazeneca"
+				
+				index -->0
+	 
+				+ index
+				- index
+	 
+	 input
 	 
 	 
 	 
+	 identation
 	 
 	 
-	 
-	 
-	 
-	 s
-

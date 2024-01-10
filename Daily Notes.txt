@@ -51,7 +51,7 @@ execute--
 	33 keywords
 
 
-python-->the coplete monty python's circus
+python-->the complete monty python's circus
 
 
 		1.Funtional Programming	from C Language
@@ -63,7 +63,7 @@ python-->the coplete monty python's circus
 
 
 	1.desktop applications	(tkinter)
-	2.web applicationss		django/flask
+	2.web applicationss		django/flask 
 	3.database applications	(PDBC)
 	4.network programming
 	5.gaming
@@ -79,12 +79,12 @@ Features:
 1)simple and easy to learn 
 2)free source and open source  jython
 3)High level Programming language
-4)platform independent 
+4)platform independent 	
 5)portability 
 6)dynamic typed 		a=123		int a=123;//static typed 
 7)interpreted
 8)rich library set
-9)interpreted 
+
 
 
 
@@ -92,7 +92,7 @@ identifiers:
 ===========
 any name in python will call it as identifier
 
-	varname,classname,method,interface,objname....
+	varname,classname,method(funtion),interface,objname....
 	
 			a-z
 			A-Z
@@ -139,7 +139,7 @@ Datatypes:
 	complex()
 	str()
 	bool()
-
+	input()
 
 *** Fundamental datatypes are immutable
 
@@ -219,4 +219,96 @@ String :
 	 
 	 identation
 	 
-	 
+	flow control statementes
+
+Functions:
+==========
+	reusability
+
+
+	def add():
+		
+
+
+Lamda Functions:
+================
+
+	lambda keyword
+
+
+#syntax: lambda args:expression
+
+
+input
+
+	username	astrazenca
+	password	astra123
+
+
+		login success
+		
+		invalid credentials
+
+	python---->file
+
+		r,w,a
+
+String/LIst/SET/Dict operations:
+================================
+OOPS:
+=======
+
+class
+object 
+constrcutor 
+self
+__init__
+
+
+class is a collection of data members and member functions
+
+	class 
+
+oops 
+	inheritance--code reusability
+
+	its a process of aquiring the features from one class to another class
+
+	
+	class Test
+		1000 methods
+	
+	
+	
+	
+	class Child(Test)
+	
+		20 methods
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -285,30 +285,113 @@ oops
 	
 		20 methods
 
+	inheritance	-->code reusability
+	
+	polymorphisam -->method overloading method overriding 
+	
+	method overloading:
+			method name is same no of params are different 
+			
+	method overriding:
+			method name is same the implementation is different
+			
+			
+	Exception Handling:
+=======================	
+			
+			with out exceptiond handling 
+				
+				1)abnormal termination
+				2)system defined error messages 
+			
+			
+			with exception handling
+			
+				1)normal termination
+				2)user friendly error messages
+			
+			
+			
+	try	--error code 
+	
+	
+	except--handling code 
+	
+	
+	
+	4 keywords
+	
+		try		error code
+		except	handling code
+		finally	cleanup code
+		raise	
+	
+	
+	
+	
+	zerodivisioerror
+	syntaxerror
+	valueerror
+	filenotfound
+	exception
+	
+	
+	
+	pip instlall packagename
+	
+	
+JAVA:
+======
+	
+	why java ?
+	
+	one of the object oriented PL
+	
+	
+	1996	-->JDK 1.0		-->sun micro system--->oracle corporation
+	
+				21
+			OAK-->James Gosling
+	
+	
+	1)platform independent  WORA
+	2)Garbage Collection   automated  garbage collector 
+	
+					java
+				jse	 jee  jme	
+	
+		1)standalone applications(core java,awt,swings,applets....)
+		2)web application		(servlets,jsp,mvc,spring web...)
+		3)distributed 			(webservices)
+		4)mobile 				(android)	
+	
+	
+	welcome/helloworld
+	
+	53 
+	
+class HelloWorld
+{
+public static void main(String args[])
+{
+	System.out.println("welcome to java .....");
+}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -452,7 +452,8 @@ usage
 			
 					eid,name,aadhar,pan,accno....
 
-		java.lang:default package for every java files
+		by default package for every java file is java.lang
+		by default parent class for every java file  java.lang.Object
 	
 package:folder
 		2 types
@@ -477,7 +478,12 @@ syntax
 		
 		}
 
-
+OOPS:
+====	
+	inheritance		code reusability  extends ,implements
+	polymorphisam
+	encapsulation
+	abstraction
 
 
 
@@ -492,11 +498,15 @@ access modifiers:
 	
 
 
+		by default package for every java file is java.lang
+		by default parent class for every java class  java.lang.Object
+	
 
 
 
-
-
+Multiple Inheritance 
+		not supported by java through classes
+		supported by java through interfaces 
 
 
 

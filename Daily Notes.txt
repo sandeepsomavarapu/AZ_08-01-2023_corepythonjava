@@ -414,13 +414,108 @@ PDT 		NPDT
 	byte	1 byte		-128 to 127
 	short	2			-32768 to 32767
 	int		4			-2147483648 to 2147483647
-	long	8           -2 power 64 to (2 power of 64 )-1
+	long	8           -2 power 63 to (2 power of 63 )-1
 								long age
 	float	4         23.5435346312786873  5-6 decimal places
 	double	8							14-15 decimal places
 	
 	boolean	1bit    	true false 
 	char 	2bytes		'M'
+
+
+
+4 points
+
+syntax:
+			for static properties we will have static keyword
+			if there is no static keyword i.e instance 
+
+memory
+			instance properties will get memory  at the time of object creation
+			
+			static properties will get memory only once at the time of class loading into jvm
+			
+				classname objname=new classname();
+		A			A obj=new A();
+			
+access
+			if it is instance we have to access by using object reference 
+			if it is static we have to access by using classname 
+		
+
+usage 
+			
+			if we have common data where we required one time memory will go for static
+
+					countryname,statename,clg name,schoolname,orgname 
+			if we have unique data to represnt then will go with instance 
+			
+					eid,name,aadhar,pan,accno....
+
+		java.lang:default package for every java files
+	
+package:folder
+		2 types
+			predfined packages	
+			user defined 	package 
+	
+import 
+
+eclipse IDE
+
+
+methods
+
+
+syntax
+======
+
+	accessmodifier instance/static returntype methodname(dt parm1,...)
+		{
+		
+		
+		
+		}
+
+
+
+
+
+
+
+
+
+access modifiers:
+==================
+
+	public private protected default
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -556,17 +556,63 @@ AccessModifiers:
 	
 	
 	
+	final :fixed ...
+	
+	@3 places 
+	
+		before the variable
+		before the method
+		before the class 
+		
+	Scanner-->java.util import 
+
+		dynamic input
+		
+constrcutor:
+		special member function which is used to intialize the object 
+		
+		Object creation
+		
+			classname objname=new classname();
+			classname objname=new constrcutor();//constrcutor calling 
+			
+			
+		-->constructor name classname must be same
+		-->default,parameterized 
+		-->constrcutor looks line method ,but constrcutor must be classname method name can be anyting
+		-->constrcutor never return ,method can return anything
+		
+		
+this,super keywords
 	
 	
+	this keyword is used to represent current class properties(variable,method,constrcutor,object)
+	
+	super keyword is used to reperesent parent class properties(variable,method,constrcutor)
 	
 	
+encapsulation
+		
+		its process of wrapping the data and corresponding methods together
+				the data as private and methods as public 
+
+exception handling
+		
+		1)system defined error messages
+		2)abnormal termination
 	
 	
+	Advantages 
+	1)user friendly error messages
+	2)normal termination
+	
+multi threading
+
+
+collections
 	
 	
-	
-	
-	
+File IO	
 
 
 

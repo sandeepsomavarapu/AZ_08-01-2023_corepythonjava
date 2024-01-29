@@ -378,7 +378,8 @@ public static void main(String args[])
 }
 
 }
-
+		javac filename.java
+		java classname
 
 identifiers:
 =============
@@ -497,9 +498,9 @@ access modifiers:
 	public private protected default
 	
 
-
-		by default package for every java file is java.lang
-		by default parent class for every java class  java.lang.Object
+NOTE
+		BY DEFAULT PACKAGE FOR EVERY JAVA FILE IS java.lang
+		BY DEFAULT PARENT CLASS FOR EVERY JAVA CLASS  java.lang.Object
 	
 
 
@@ -509,16 +510,63 @@ Multiple Inheritance
 		supported by java through interfaces 
 
 
+abstract method ,concrete method
+
+concrete method:
+===============
+	a method with body/implementation will call it as concrete method
+
+abstract method:
+================
+	a method with out body/implementation will call it as abstract method
+
+
+		public abstract void m1();
 
 
 
+	class-->its a collection only concrete methods
+abstract class-->its a combination of both concrete and abstract methods
+	interface--->its a collection of only abstract methods
 
+			interface methods are by default public abstract
+			interface variables are by default public static final
+	
 
+polymorphisam
+Overloading 
+	method name is same signature is different
+						no of params
+						order of params
+						type of params 
 
+Overriding
 
-
-
-
+	method name is same implementation is different 
+	
+	
+	
+AccessModifiers:
+===============
+		public			anyone/anywhere 
+		protected		package level scope/outside the package only in child classes 
+		default			package level scope 
+		private 		class level scipe 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 

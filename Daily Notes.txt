@@ -602,9 +602,71 @@ exception handling
 		2)abnormal termination
 	
 	
+	
+	Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at com.astra.exceptions.ExceptionEx.main(ExceptionEx.java:15)  ---->system defined error message 
+
+	
+	
+	
+	Cannot divide by zero--->user friendly error message
+	
+	
+	arrays:
+	========
+	
+		variables
+		
+		int id =123;
+			id=124;
+	
+	
+		[]-->square brackets
+	
+		int ids[]={12,32,4,5,3,22,64,33,63};
+		
+		index-->0,1,2,3,4,5,6,7,8
+		
+		
+		
+		
+		
+	
 	Advantages 
 	1)user friendly error messages
 	2)normal termination
+	
+	
+	
+	user defined 
+	
+	1)make the class as child class to the anyone of the parent classs	
+	2)parameterized constructor
+	
+	throw 
+	
+	throws 
+	
+	
+	class A extends Exception/Throwable/RuntimeException
+	{
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 multi threading
 

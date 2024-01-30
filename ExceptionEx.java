@@ -9,7 +9,7 @@ import java.util.Scanner;
 //2)normal termination
 public class ExceptionEx {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter first number for division:");
 		int fnum = scan.nextInt();
@@ -17,6 +17,10 @@ public class ExceptionEx {
 		int snum = scan.nextInt();
 		try {
 			int result = fnum / snum;// terminated
+			if(result<100)
+			{
+				throw new Exception("division result must be above 100");
+			}
 			System.out.println("division is : " + result);
 		} catch (ArithmeticException ex) {
 			System.out.println("Denominator cannot be zero...");

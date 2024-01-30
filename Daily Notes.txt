@@ -654,21 +654,64 @@ exception handling
 	
 	}
 	
+Multi Threading:
+================	
 	
 	
+	multi tasking:executing several tasks simutaniously
 	
+		process based multi tasking
+			
+				executing several tasks simutaniously where each task is seprate independent process
+		
+		thread based multi tasking 
 	
+				executing several tasks simutaniously where each task belongs to thes same process
 	
-	
-	
-	
-	
+			process:collection of threads
+			thread: a smallest unit of process
 	
 	
 	
 	
 	
 multi threading
+
+
+two ways
+
+	1)implements Runnable-->DI
+	2)extends Thread
+
+
+				run()
+
+
+
+
+
+
+interface -any number of methods
+
+FI -->one abstract method 
+
+MI-->the interface with zero abstract method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 collections

@@ -625,7 +625,7 @@ exception handling
 	
 		int ids[]={12,32,4,5,3,22,64,33,63};
 		
-		index-->0,1,2,3,4,5,6,7,8
+		index-->0,1,2,3,4,5,6,7,8 AIOE
 		
 		
 		
@@ -680,7 +680,7 @@ multi threading
 
 two ways
 
-	1)implements Runnable-->DI
+	1)implements Runnable-->MI
 	2)extends Thread
 
 
@@ -693,43 +693,56 @@ two ways
 
 interface -any number of methods
 
-FI -->one abstract method 
+FI -->one abstract method --->SAM
 
-MI-->the interface with zero abstract method
+MI-->the interface with zero abstract method-->Serializable
 
+thread priorities 1-10
 
+Synchronization
+================
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-collections
+	public void m1()    t1,t2,t3,t4
+	{						
 	
+	}
+
+	public synchronized void m2()
+	{
 	
-File IO	
+	}
 
 
+Inter Thread Communication:
+===========================
+		wait ,notify,notifyAll
+
+COLLECTIONS:
+============
+	
+		
+arrays-
+
+	1)only homogeneous data is allowed
+	2)array size is fixed 
+	3)no utility methods
+
+Collections-
+
+	1)both homogeneous data and haterogenous data is allowed
+	2)collections  size is not  fixed /growable in nature
+	3)lots utility methods
 
 
+	List:
+		1)Duplicates are allowed 
+		2)insertion order is preserved 
 
 
-
-
-
-
-
-
+		AL-10	--16		-->NO THREAD SAFETY,PERFORMANCE
+		V-10	-->20		-->THREAD SAFETY,LOW PERFORMANCE
+	
+		AL,LL
 
 
 

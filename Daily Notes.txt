@@ -719,7 +719,7 @@ Inter Thread Communication:
 
 COLLECTIONS:
 ============
-	
+	VAIRABLE--ONE VALUE AT A TIME
 		
 arrays-
 
@@ -733,7 +733,7 @@ Collections-
 	2)collections  size is not  fixed /growable in nature
 	3)lots utility methods
 
-
+java.util,java.lang,java.io
 	List:
 		1)Duplicates are allowed 
 		2)insertion order is preserved 
@@ -743,6 +743,441 @@ Collections-
 		V-10	-->20		-->THREAD SAFETY,LOW PERFORMANCE
 	
 		AL,LL
+
+
+	Set:
+	HashSet
+		1)Duplicates are not allowed 
+		2)Insertion order is not preserved 
+					
+	LinkedHashSet
+			
+		1)Duplicates are not allowed 
+		2)Insertion order is  preserved 
+	
+	TreeSet
+		1)Duplicates are not allowed 
+		2)Insertion order is not preserved 
+		3)will give alphabatical/ascending order		
+		
+
+	Map:
+	HashMap
+		1)Duplicates keys are not allowed values can be duplicate
+		2)Insertion order is not preserved 
+					
+	LinkedHashMap
+			
+		1)Duplicates keys are not allowed values can be duplicate
+		2)Insertion order is  preserved 
+	
+	TreeMap
+		1)Duplicates are not allowed 
+		2)Insertion order is not preserved 
+		3)will give alphabatical/ascending order based on key		
+				
+		
+		
+	ProductManagementApp	
+		
+		1)AddProduct			
+		2)UpdateProduct
+		3)DeleteProduct
+		4)GetProductInfo
+		5)GetAllProducts
+		6)GetALLProducts In between Price
+		7)GetAll Products With Category
+		8)GetAll Products by Brand
+
+save  collections
+
+public class Product
+{
+private	int	productId;
+private	String	productName;
+private	float	productPrice;
+private String productCategory;
+private String productBrandName;
+}
+
+
+
+
+
+Java8 Features
+===============
+	1)lambda expression
+	2)Functional Interface		-->SAM  @FunctionalInterface
+	3)default , static methods
+
+	
+	public int addition(int a,int b)
+	{
+	 int result=a+b;
+	 return result;
+	}
+
+lamda expression
+
+	without accessmodifier,return ,method name,parameter DT,curly braces
+
+	  (a,b)->a+b;//expression
+	
+
+
+	EmployeeManagementApp	
+		
+		1)AddEmployee			
+		2)UpdateEmployee
+		3)DeleteEmployee
+		4)GetEmployeesInfo
+		5)GetAllEmployees
+		6)GetALLEmployees In between Salries
+		7)GetAll Employees by Company
+		8)GetAll Employees by Designation
+
+save  collections
+
+public class Employee
+{
+private	int	employeeId;
+private	String	employeeName;
+private	float	employeeSalary;
+private String employeeCompany;
+private String employeeDesignation;
+}
+
+files
+Database
+MYSQL--RDBMS
+======
+		
+		querys 
+eid ename esal eadd designation
+123 suresh .........
+tables
+
+
+DDL --create,alter,drop,truncate,rename
+DML--insert,update,delete
+DRL---select
+JDBC
+
+
+java app--->database 
+
+		JDBC API-->sun micro system -->interfaces classes 
+
+	java database connectivity
+
+		JAVA-->MYSQL
+
+5 STEPS 
+
+
+1.LOADING THE DRIVER CLASS
+
+
+2.CREATEING THE CONNECTION
+
+
+3.CREATING THE STATEMENT
+
+
+4.EXECUTING THE QUERY
+
+
+5.CLOSING THE CONNECTION
+
+
+		jar
+		
+		mysql.connector.jar
+		
+		
+		Statement 
+		PreparedStatement
+		CallableStatement--->making procedure calls
+		
+		
+		
+					java 				Database 
+		
+
+							driver	jdbc-odbc driver
+									native api driver
+									network protocal driver 
+									thin driver type4 driver
+
+
+Junit Testing:
+=============
+
+		unit- a peace of code
+
+		
+	ASSERTIONS
+	SSERT CLASS 
+
+
+ERICH GAMMA AND KENT BECK
+
+
+
+
+Jdbc Sun micro system
+
+1)table creation
+2)querys
+3)exception handing
+4)no cache support
+
+
+JPA--->sun micro system
+
+1)no table creations
+2)no querys
+3)no exception hadnling
+4)cache support
+
+
+
+JPA-->java persistence api -->specification
+
+		ORM-->object relational mapping -->object -->ibatis,eclipselink,toplink,hibernate
+
+
+
+Employee CRUD-->create,read,update,delete
+
+
+	jdbc--->jpa
+	
+	
+	java project
+	
+	
+		jpa-jars 
+		
+		mysqlconnector-jar
+	
+	
+		META-INF
+		
+			JPA--HIBERNATE 
+		
+		persistence.xml
+			<persistence>
+				<persistence-unit>
+				<!--four Database properties  -->
+				<property>
+				<!-- three hibernate properties-->
+				</persistence-unit>
+			
+			
+			</persistence>
+			
+@Entity
+@Id
+@Column
+@Table
+@GeneratedValue		
+		
+		
+JPQL:		
+		
+		
+		PERSIST,MERGE,REMOVE,FIND--->ONE ROW
+		
+		
+		JAVA PERSISTENCE QUERY LANGUAGE -createQuery()
+		
+		mysql--->select eid,ename from astra_emps;// DB depenedent query 
+		
+		JPQL									  //database independent query
+
+		TypedQuery<Employee> query=em.createQuery("select empid,empname from Employee",Employee.class)
+		
+		
+@Entity
+@Table(name="astra_emps")		
+class Employee
+{
+
+
+}		
+
+Criteria API
+		
+Persistence life cycle 
+		
+		
+Relationships	
+
+corejava:
+
+Spring Framework:
+==================		
+	Spring is a non-invasive framework,which is used to create light weight and loosley coupled application
+
+2 types  framework
+
+	NON-INVASIVE	spring,hibernate :it will never force to the developer to implement predefined API
+	INVASIVE		struts:even though its a framework it will force developer to implement predefined API
+	
+	LIGHT WEIGHT 	spring
+	HEAVY WEIGHT	servlet,ejb,jsf,struts....
+	
+	
+	LOOSLEY COUPLED 
+	TIGHTLY COUPLED
+
+
+
+
+Servlet-->web app
+
+
+1)implements Servlet	5 methods
+2)extends GenericServlet	5 methods
+3)extends HttpServlet 12 methods
+
+class Login extends HttpServlet
+{//12 methods
+
+
+
+}
+
+1000*12=12000
+
+
+EJB-->heavy weight component
+
+spring
+
+
+class Test
+{
+Test(String name)
+{
+
+}
+
+public void m1()
+{
+.....
+}
+
+
+}
+
+class Client
+{
+
+public void m2()
+{
+	Test test=new Test();//tightly coupled
+	test.m1();
+}
+
+
+}
+
+spring --->loosley coupled-->container 
+
+Rod Johnson-2003
+
+EJB-->interface21-->2003 1.x-->6.x-->5.x-->20+ modules
+
+	spring core module/dependency injection module/IOC(inversion of control)
+
+	spring jdbc
+	spring orm
+	spring web
+	spring jpa
+	spring security
+	spring aop ......
+	
+				container -->spring container -->object life cycle 
+			
+	
+
+	
+object life cycle
+
+	creation of object 
+	wiring the object
+	configuring the object 
+	destroying the object 
+
+spring containers
+
+	1)BeanFactory
+	2)ApplicationContext
+
+
+
+		configuration -->xml,java,annotation
+
+
+	xml configuration
+	<beans>
+		<bean>
+			<property>
+	
+	setter injection --><property>
+	constructor injection--><constrcutor-arg>
+	autowiring
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

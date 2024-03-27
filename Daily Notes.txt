@@ -1012,7 +1012,7 @@ Criteria API
 Persistence life cycle 
 		
 		
-Relationships	
+Relationships-->@onetoone @onetomany	
 
 corejava:
 
@@ -1091,11 +1091,11 @@ Rod Johnson-2003
 EJB-->interface21-->2003 1.x-->6.x-->5.x-->20+ modules
 
 	spring core module/dependency injection module/IOC(inversion of control)
-
 	spring jdbc
 	spring orm
 	spring web
 	spring jpa
+	spring rest
 	spring security
 	spring aop ......
 	
@@ -1113,8 +1113,8 @@ object life cycle
 
 spring containers
 
-	1)BeanFactory
-	2)ApplicationContext
+	1)BeanFactory //Lazy initializer
+	2)ApplicationContext   //Eager initializer
 
 
 
@@ -1125,10 +1125,402 @@ spring containers
 	<beans>
 		<bean>
 			<property>
+			scope-->singleton,prototype
 	
 	setter injection --><property>
 	constructor injection--><constrcutor-arg>
-	autowiring
+	
+	autowiring --->byname,bytype,constrcutor
+
+
+annotation configuration
+
+
+@Component
+@Autowired
+@Componentscan
+@Qualifier
+@Configuration
+@Bean
+@Service
+@Repository
+@Componentscans
+
+
+
+Java configuration
+-------------------
+
+NOTE:spring has given annotations for userdefined classes but not for predefined classes
+
+
+	@Component/@Service/@Repository
+
+Employee
+
+JPA
+ENtityManager 
+transaction,server....
+
+		@Bean
+	public Employee getEmployee()
+	{
+	
+		return new Employee();
+	}
+	
+	Student
+	-->properties
+		address
+		Taddress			XMl,Java,Annotation
+	
+	
+	Address
+	
+	
+	TAddress
+	
+	
+JDBC API
+
+
+
+	java -->DB
+	
+	ojdbc.jar ,mysql-connector
+
+Spring JDBC--->loosley coupled 
+
+
+	spring is light weight and loosley coupled  
+
+
+	spring jdbc,spring aop,spring orm spring web......
+	
+	
+	JDBC-->CRUD
+	JPA-->CRUD-->no quers ,db independent
+	
+	
+	spring JDBC-->JdbcTemplate
+	
+	
+	SPring
+	
+	
+	
+		ProductManagementApp	
+		
+		1)AddProduct			
+		2)UpdateProduct
+		3)DeleteProduct
+		4)GetProductInfo
+		5)GetAllProducts
+		6)GetALLProducts In between Price
+		7)GetAll Products With Category
+		8)GetAll Products by Brand
+		
+		Using Spring JPA with maven(mysql) 
+	
+	
+	
+Spring MVC:
+=============	
+	
+	
+	model view controller
+	
+	spring mvc:front controller--->DispatcherServlet
+	
+	
+
+controller 
+
+	@Controller
+
+078	@RequestMapping
+		method type-->get ,post,put,delete
+		
+		@RequestBody
+
+Spring Boot:RAD
+
+
+Spring BOOT=Spring + embededServer- xml config250
+
+
+1)configuration
+2)no implicit server 
+3)dependencies
+
+
+
+1)AutoConfiguration 		most of the commonly used classes already configured by the spring boot(datasoruce,entitymanagerfactory)
+2)embededServer 				internal server  tomcat
+3)starter dependencies  		starter parent 
+4)actuators 		insite about project  /health /beans
+
+
+
+
+STS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		ProductManagementApp	
+		
+		1)AddProduct			
+		2)UpdateProduct
+		3)DeleteProduct
+		4)GetProductInfo
+		5)GetAllProducts
+		6)GetALLProducts In between Price
+		7)GetAll Products With Category
+		8)GetAll Products by Brand
+
+
+
+c3po,hikari,dmds,tomcat
+	2.x/3.x hikari
+
+Webservices:
+RMI,EJB,SP,DCOM,CORBA,RPC
+
+	APP1 <--->	APP2
+
+	XML,JSON,PT,JS,HTML..
+
+JSON
+
+
+
+JACKSON API--
+
+WEBSERVICES  2 
+
+SOAP -->xml
+REST-XML,JSON...
+
+CrudRepository
+JpaRepository
+
+
+
+validations
+global exception handling 
+
+Security
+
+authentication
+
+authorization
+
+JWT-<json web token
+
+
+MYSQL :
+=========
+SQL:structural query language 
+
+
+History 
+
+1970's BY IBM
+	
+	Raymond Boyce
+	Donald
+	
+	sequel
+	
+	System R
+	
+Database:
+a database 	well ordered collection of data
+	
+
+Excel
+
+
+Mysql
+
+https://dev.mysql.com/downloads/installer/
+
+
+
+create database astra_india;
+use astra_india;
+#DDL,DML,DRL
+#DDL-->data defination language ,create,alter,drop,truncate,rename
+create table products(productId int,productName varchar(15),price decimal,category varchar(15));
+desc products;
+create table products_info as select * from products;
+create table products_info as select * from products where 1=2;
+alter table products add prodDesc varchar(20);
+alter table products drop prodDesc;
+alter table products rename to products_data;
+alter table products_data change productid pid int;
+truncate table products_Data;
+drop table products_Data;
+#DML-->insert,update,delete
+insert into products_info values(123,'delltv123',23400,'electronics');
+insert into products_info
+ values(124,'tiger',19500,'toys'),
+       (125,'lion',22010,'toys'),
+	   (126,'samsung',33400,'electronics'),
+	   (127,'toor dal',29400,'grocories');
+insert into products_info (productid,productname)values(222,'dell-lap');
+select * from products_info;
+update products_info set productname='mitv' where productid=123;
+update products_info set productname='oppo-mobile',price=89000 where productid=126;
+update products_info set price=price+99;
+delete from products_info where productid=124;
+delete from products_info;
+select * from products_info where productid=123;
+select productid,productname from products_info;
+select * from products_info where price between 15000 and 25000;
+select * from products_info where price between 15000 and 20000 and category='toys';
+select max(price) from products_info;
+select min(price) from products_info;
+select sum(price) from products_info;
+select avg(price) from products_info;
+select count(price) from products_info;
+truncate table products_info;
+select * from products_info limit 3;
+select * from products_info where category like "e%";
+select * from products_info where category like "%ys";
+select * from products_info where productname in('tiger','dell','samsung');
+select upper(productname) from products_info;
+select lower(productname) from products_info;
+select length(productname) from products_info;
+select * from products_info order by productname desc;
+select * from products_info order by productname asc;
+select * from products_info;
+#constraints
+insert into products_info values(555,'intel',-800,'electronics');
+insert into products_info (productid,productname)values(222,'dell-lap');
+#notnull,check,unique,primary key,foreign key
+
+create table emp_info(empid int,ename varchar(15) not null,esal int,eadd varchar(10));
+insert into emp_info values(555,'suresh',2000,'hyderabad');
+insert into emp_info(empid,ename,esal) values(666,'mahesh',2000);
+select * from emp_info;
+select * from emp_info1;
+create table emp_info1(empid int unique,ename varchar(15) not null,esal int check(esal>10000),eadd varchar(10),check(length(ename)>6));
+insert into emp_info1 values(555,'sureshkumar',12000,'hyderabad');
+#primary key=unique+NN
+insert into emp_info1(ename,esal,eadd) values('maheshkumar',22000,'hyderabad');
+create table emp_info2(empid int primary key,ename varchar(15) not null,esal int check(esal>10000),eadd varchar(10),check(length(ename)>6));
+insert into emp_info2 values(555,'sureshkumar',12000,'hyderabad');
+insert into emp_info2(ename,esal,eadd) values('maheshkumar',22000,'hyderabad');
+
+CREATE TABLE dept(
+    deptno INT,
+    dname VARCHAR(14),
+    loc VARCHAR(13),
+	constraint pk_dept primary key (deptno)
+);
+INSERT INTO dept(deptno, dname, loc) VALUES
+(10, 'ACCOUNTING', 'NEW YORK'),
+(20, 'RESEARCH', 'DALLAS'),
+(30, 'SALES', 'CHICAGO'),
+(40, 'OPERATIONS', 'BOSTON');
+select * from dept;
+CREATE TABLE emp(
+    empno INT,
+    ename VARCHAR(10),
+    job VARCHAR(9),
+    mgr INT,
+    hiredate DATE,
+    sal DECIMAL(7,2),
+    comm DECIMAL(7,2),
+    deptno INT,
+   constraint pk_emp primary key (empno),
+   constraint fk_deptno foreign key (deptno) references dept (deptno) 
+);
+
+INSERT INTO emp VALUES
+(7839, 'KING', 'PRESIDENT', null, '1981-11-17', 5000, null, 10),
+(7698, 'BLAKE', 'MANAGER', 7839,'1981-05-01', 2850, null, 30),
+(7782, 'CLARK', 'MANAGER', 7839, '1981-06-09', 2450, null, 10),
+(7566, 'JONES', 'MANAGER', 7839, '1981-04-02',2975, null, 20),
+(7788, 'SCOTT', 'ANALYST', 7566, '1981-04-19',3000, null, 20),
+(7902, 'FORD', 'ANALYST', 7566, '1981-03-12', 3000, null, 20),
+(7369, 'SMITH', 'CLERK', 7902,'1980-12-17', 800, null, 20),
+(7499, 'ALLEN', 'SALESMAN', 7698,'1981-02-20', 1600, 300, 30),
+(7521, 'WARD', 'SALESMAN', 7698, '1981-02-22',1250, 500, 30),
+(7654, 'MARTIN', 'SALESMAN', 7698,'1981-09-28',1250, 1400, 30),
+(7844, 'TURNER', 'SALESMAN', 7698,'1981-09-08',1500, 0, 30),
+(7876, 'ADAMS', 'CLERK', 7788, '1987-05-23',1100, null, 20),
+(7900, 'JAMES', 'CLERK', 7698,'1981-03-12',950, null, 30),
+(7934, 'MILLER', 'CLERK', 7782,'1982-01-23',1300, null, 10);
+select * from emp;
+select * from dept;
+delete from dept where deptno=20;
+
+constraints:
+=============
+constraint is rule or restriction applied on the table data 
+
+Notnull,check,primary key,unique,foreign key
+foreign key constraint:
+========================
+
+eid  ename  esal 	eadd    deptno 	  dname      dloc 
+1		x   1000    hyd   	 10      "admin"	hyderabad
+2		y   2000    hyd   	 20      "hr"	    delhi
+3		z   3000    hyd   	 30      "trainer"	mumbai
+4		b   4000    hyd   	 10      "admin"	hyderabad
+5		a   5000    hyd   	 20      "hr"   	delhi
+6		c   4500    hyd   	 30      "trainer"	mumbai
+7		d   6500    hyd   	 10      "admin"	hyderabad
+8		e   2500    hyd   	 20      "hr"	    delhi
+9		f   1500    hyd   	 30      "trainer"	mumbai
+
+emp
+
+eid  ename  esal 	eadd    deptno 	  
+1		x   1000    hyd   	 10     
+2		y   2000    hyd   	 20     
+3		z   3000    hyd   	 30     
+4		b   4000    hyd   	 10     
+5		a   5000    hyd   	 20     
+6		c   4500    hyd   	 30     
+7		d   6500    hyd   	 10      
+8		e   2500    hyd   	 20     
+9		f   1500    hyd   	 30      
+
+
+dept
+deptno 	  dname         dloc 
+10       "admin"    	hyderabad
+20       "hr"	        delhi
+30       "trainer"	    mumbai 
 
 
 
@@ -1159,16 +1551,7 @@ spring containers
 
 
 
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 

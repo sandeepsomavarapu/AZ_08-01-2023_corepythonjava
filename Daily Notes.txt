@@ -1373,115 +1373,6 @@ https://dev.mysql.com/downloads/installer/
 
 
 
-create database astra_india;
-use astra_india;
-#DDL,DML,DRL
-#DDL-->data defination language ,create,alter,drop,truncate,rename
-create table products(productId int,productName varchar(15),price decimal,category varchar(15));
-desc products;
-create table products_info as select * from products;
-create table products_info as select * from products where 1=2;
-alter table products add prodDesc varchar(20);
-alter table products drop prodDesc;
-alter table products rename to products_data;
-alter table products_data change productid pid int;
-truncate table products_Data;
-drop table products_Data;
-#DML-->insert,update,delete
-insert into products_info values(123,'delltv123',23400,'electronics');
-insert into products_info
- values(124,'tiger',19500,'toys'),
-       (125,'lion',22010,'toys'),
-	   (126,'samsung',33400,'electronics'),
-	   (127,'toor dal',29400,'grocories');
-insert into products_info (productid,productname)values(222,'dell-lap');
-select * from products_info;
-update products_info set productname='mitv' where productid=123;
-update products_info set productname='oppo-mobile',price=89000 where productid=126;
-update products_info set price=price+99;
-delete from products_info where productid=124;
-delete from products_info;
-select * from products_info where productid=123;
-select productid,productname from products_info;
-select * from products_info where price between 15000 and 25000;
-select * from products_info where price between 15000 and 20000 and category='toys';
-select max(price) from products_info;
-select min(price) from products_info;
-select sum(price) from products_info;
-select avg(price) from products_info;
-select count(price) from products_info;
-truncate table products_info;
-select * from products_info limit 3;
-select * from products_info where category like "e%";
-select * from products_info where category like "%ys";
-select * from products_info where productname in('tiger','dell','samsung');
-select upper(productname) from products_info;
-select lower(productname) from products_info;
-select length(productname) from products_info;
-select * from products_info order by productname desc;
-select * from products_info order by productname asc;
-select * from products_info;
-#constraints
-insert into products_info values(555,'intel',-800,'electronics');
-insert into products_info (productid,productname)values(222,'dell-lap');
-#notnull,check,unique,primary key,foreign key
-
-create table emp_info(empid int,ename varchar(15) not null,esal int,eadd varchar(10));
-insert into emp_info values(555,'suresh',2000,'hyderabad');
-insert into emp_info(empid,ename,esal) values(666,'mahesh',2000);
-select * from emp_info;
-select * from emp_info1;
-create table emp_info1(empid int unique,ename varchar(15) not null,esal int check(esal>10000),eadd varchar(10),check(length(ename)>6));
-insert into emp_info1 values(555,'sureshkumar',12000,'hyderabad');
-#primary key=unique+NN
-insert into emp_info1(ename,esal,eadd) values('maheshkumar',22000,'hyderabad');
-create table emp_info2(empid int primary key,ename varchar(15) not null,esal int check(esal>10000),eadd varchar(10),check(length(ename)>6));
-insert into emp_info2 values(555,'sureshkumar',12000,'hyderabad');
-insert into emp_info2(ename,esal,eadd) values('maheshkumar',22000,'hyderabad');
-
-CREATE TABLE dept(
-    deptno INT,
-    dname VARCHAR(14),
-    loc VARCHAR(13),
-	constraint pk_dept primary key (deptno)
-);
-INSERT INTO dept(deptno, dname, loc) VALUES
-(10, 'ACCOUNTING', 'NEW YORK'),
-(20, 'RESEARCH', 'DALLAS'),
-(30, 'SALES', 'CHICAGO'),
-(40, 'OPERATIONS', 'BOSTON');
-select * from dept;
-CREATE TABLE emp(
-    empno INT,
-    ename VARCHAR(10),
-    job VARCHAR(9),
-    mgr INT,
-    hiredate DATE,
-    sal DECIMAL(7,2),
-    comm DECIMAL(7,2),
-    deptno INT,
-   constraint pk_emp primary key (empno),
-   constraint fk_deptno foreign key (deptno) references dept (deptno) 
-);
-
-INSERT INTO emp VALUES
-(7839, 'KING', 'PRESIDENT', null, '1981-11-17', 5000, null, 10),
-(7698, 'BLAKE', 'MANAGER', 7839,'1981-05-01', 2850, null, 30),
-(7782, 'CLARK', 'MANAGER', 7839, '1981-06-09', 2450, null, 10),
-(7566, 'JONES', 'MANAGER', 7839, '1981-04-02',2975, null, 20),
-(7788, 'SCOTT', 'ANALYST', 7566, '1981-04-19',3000, null, 20),
-(7902, 'FORD', 'ANALYST', 7566, '1981-03-12', 3000, null, 20),
-(7369, 'SMITH', 'CLERK', 7902,'1980-12-17', 800, null, 20),
-(7499, 'ALLEN', 'SALESMAN', 7698,'1981-02-20', 1600, 300, 30),
-(7521, 'WARD', 'SALESMAN', 7698, '1981-02-22',1250, 500, 30),
-(7654, 'MARTIN', 'SALESMAN', 7698,'1981-09-28',1250, 1400, 30),
-(7844, 'TURNER', 'SALESMAN', 7698,'1981-09-08',1500, 0, 30),
-(7876, 'ADAMS', 'CLERK', 7788, '1987-05-23',1100, null, 20),
-(7900, 'JAMES', 'CLERK', 7698,'1981-03-12',950, null, 30),
-(7934, 'MILLER', 'CLERK', 7782,'1982-01-23',1300, null, 10);
-select * from emp;
-select * from dept;
-delete from dept where deptno=20;
 
 constraints:
 =============
@@ -1523,6 +1414,9 @@ deptno 	  dname         dloc
 30       "trainer"	    mumbai 
 
 
+Joins:=
+========
+temparary relation between column coulumns of the tables
 
 
 
@@ -1537,13 +1431,384 @@ deptno 	  dname         dloc
 
 
 
+create database astra_india;
+
+use astra_india;
+
+#DDL,DML,DRL
+
+#DDL-->data defination language ,create,alter,drop,truncate,rename
+
+create table products(productId int,productName varchar(15),price decimal,category varchar(15));
+
+desc products;
+
+create table products_info as select * from products;
+
+create table products_info as select * from products where 1=2;
+
+alter table products add prodDesc varchar(20);
+
+alter table products drop prodDesc;
+
+alter table products rename to products_data;
+
+alter table products_data change productid pid int;
+
+truncate table products_Data;
+
+drop table products_Data;
+
+#DML-->insert,update,delete
+
+insert into products_info values(123,'delltv123',23400,'electronics');
+
+insert into products_info
+
+values(124,'tiger',19500,'toys'),
+
+       (125,'lion',22010,'toys'),
+
+	   (126,'samsung',33400,'electronics'),
+
+	   (127,'toor dal',29400,'grocories');
+
+insert into products_info (productid,productname)values(222,'dell-lap');
+
+select * from products_info;
+
+update products_info set productname='mitv' where productid=123;
+
+update products_info set productname='oppo-mobile',price=89000 where productid=126;
+
+update products_info set price=price+99;
+
+delete from products_info where productid=124;
+
+delete from products_info;
+
+select * from products_info where productid=123;
+
+select productid,productname from products_info;
+
+select * from products_info where price between 15000 and 25000;
+
+select * from products_info where price between 15000 and 20000 and category='toys';
+
+select max(price) from products_info;
+
+select min(price) from products_info;
+
+select sum(price) from products_info;
+
+select avg(price) from products_info;
+
+select count(price) from products_info;
+
+truncate table products_info;
+
+select * from products_info limit 3;
+
+select * from products_info where category like "e%";
+
+select * from products_info where category like "%ys";
+
+select * from products_info where productname in('tiger','dell','samsung');
+
+select upper(productname) from products_info;
+
+select lower(productname) from products_info;
+
+select length(productname) from products_info;
+
+select * from products_info order by productname desc;
+
+select * from products_info order by productname asc;
+
+select * from products_info;
+
+#constraints
+
+insert into products_info values(555,'intel',-800,'electronics');
+
+insert into products_info (productid,productname)values(222,'dell-lap');
+
+#notnull,check,unique,primary key,foreign key
+ 
+create table emp_info(empid int,ename varchar(15) not null,esal int,eadd varchar(10));
+
+insert into emp_info values(555,'suresh',2000,'hyderabad');
+
+insert into emp_info(empid,ename,esal) values(666,'mahesh',2000);
+
+select * from emp_info;
+
+select * from emp_info1;
+
+create table emp_info1(empid int unique,ename varchar(15) not null,esal int check(esal>10000),eadd varchar(10),check(length(ename)>6));
+
+insert into emp_info1 values(555,'sureshkumar',12000,'hyderabad');
+
+#primary key=unique+NN
+
+insert into emp_info1(ename,esal,eadd) values('maheshkumar',22000,'hyderabad');
+
+create table emp_info2(empid int primary key,ename varchar(15) not null,esal int check(esal>10000),eadd varchar(10),check(length(ename)>6));
+
+insert into emp_info2 values(555,'sureshkumar',12000,'hyderabad');
+
+insert into emp_info2(ename,esal,eadd) values('maheshkumar',22000,'hyderabad');
+ 
+CREATE TABLE dept(
+
+    deptno INT,
+
+    dname VARCHAR(14),
+
+    loc VARCHAR(13),
+
+	constraint pk_dept primary key (deptno)
+
+);
+
+INSERT INTO dept(deptno, dname, loc) VALUES
+
+(10, 'ACCOUNTING', 'NEW YORK'),
+
+(20, 'RESEARCH', 'DALLAS'),
+
+(30, 'SALES', 'CHICAGO'),
+
+(40, 'OPERATIONS', 'BOSTON');
+
+select * from dept;
+
+CREATE TABLE emp(
+
+    empno INT,
+
+    ename VARCHAR(10),
+
+    job VARCHAR(9),
+
+    mgr INT,
+
+    hiredate DATE,
+
+    sal DECIMAL(7,2),
+
+    comm DECIMAL(7,2),
+
+    deptno INT,
+
+   constraint pk_emp primary key (empno),
+
+   constraint fk_deptno foreign key (deptno) references dept (deptno) 
+
+);
+ 
+INSERT INTO emp VALUES
+
+(7839, 'KING', 'PRESIDENT', null, '1981-11-17', 5000, null, 10),
+
+(7698, 'BLAKE', 'MANAGER', 7839,'1981-05-01', 2850, null, 30),
+
+(7782, 'CLARK', 'MANAGER', 7839, '1981-06-09', 2450, null, 10),
+
+(7566, 'JONES', 'MANAGER', 7839, '1981-04-02',2975, null, 20),
+
+(7788, 'SCOTT', 'ANALYST', 7566, '1981-04-19',3000, null, 20),
+
+(7902, 'FORD', 'ANALYST', 7566, '1981-03-12', 3000, null, 20),
+
+(7369, 'SMITH', 'CLERK', 7902,'1980-12-17', 800, null, 20),
+
+(7499, 'ALLEN', 'SALESMAN', 7698,'1981-02-20', 1600, 300, 30),
+
+(7521, 'WARD', 'SALESMAN', 7698, '1981-02-22',1250, 500, 30),
+
+(7654, 'MARTIN', 'SALESMAN', 7698,'1981-09-28',1250, 1400, 30),
+
+(7844, 'TURNER', 'SALESMAN', 7698,'1981-09-08',1500, 0, 30),
+
+(7876, 'ADAMS', 'CLERK', 7788, '1987-05-23',1100, null, 20),
+
+(7900, 'JAMES', 'CLERK', 7698,'1981-03-12',950, null, 30),
+
+(7934, 'MILLER', 'CLERK', 7782,'1982-01-23',1300, null, 10);
+
+select * from emp;
+
+select * from dept;
+
+delete from dept where deptno=20;
+ 
+#Joins
+
+#cross join,equi join -->left outer ,right outer join
+
+select * from emp;
+
+select * from dept;
+ 
+select e.empno,e.ename,e.sal,d.deptno,d.dname from emp e,dept d;
+
+select e.empno,e.ename,e.sal,d.deptno,d.dname from emp e cross join dept d;
+
+#equi join/inner join
+
+select e.empno,e.ename,e.sal,d.deptno,d.dname from emp e,dept d where e.deptno=d.deptno;
+
+select e.empno,e.ename,e.sal,d.deptno,d.dname from emp e,dept d where e.deptno=d.deptno;
+
+insert into emp(empno,ename,sal) values(123,'sandeep',23000);
+
+select * from emp;
+
+select * from dept;
+
+select e.empno,e.ename,e.sal,d.deptno,d.dname from emp e left outer join dept d on e.deptno=d.deptno;
+
+select e.empno,e.ename,e.sal,d.deptno,d.dname from emp e right outer join dept d on e.deptno=d.deptno;
+
+select e.empno,m.ename,e.ename as manager from emp e ,emp m where e.empno=m.mgr;
+ 
+ 
+ 
+ 
+select * from emp;
+
+select deptno,sum(sal) from emp group by deptno;
+
+select deptno,min(sal) from emp group by deptno;
+
+select deptno,max(sal) from emp group by deptno;
+
+SELECT ename, sal + comm AS total
+
+FROM Emp
+
+ORDER BY total DESC;
+
+SELECT * FROM EMP WHERE SAL>(SELECT SAL FROM EMP WHERE EMPNO=7934);
+
+SELECT * FROM EMP WHERE SAL!=(SELECT SAL FROM EMP WHERE EMPNO=7499);
+
+SELECT * FROM EMP WHERE SAL<(SELECT SAL FROM EMP WHERE EMPNO=7499);
+
+SELECT * FROM EMP WHERE SAL>(SELECT avg(SAL) FROM EMP);
+
+SELECT * FROM emp   
+
+WHERE sal > ANY (SELECT sal FROM emp WHERE sal BETWEEN 2500 AND 4000);
+
+SELECT * FROM emp   
+
+WHERE sal > All (SELECT sal FROM emp WHERE sal BETWEEN 2500 AND 4000);
+
+SELECT * FROM emp   
+
+WHERE sal IN (SELECT sal FROM emp WHERE sal BETWEEN 2500 AND 4000);
+ 
+SELECT D.* FROM DEPT D WHERE EXISTS(SELECT E.EMPNO FROM EMP E WHERE  E.DEPTNO=D.DEPTNO);
+
+SELECT D.* FROM DEPT D WHERE not EXISTS(SELECT E.EMPNO FROM EMP E WHERE  E.DEPTNO=D.DEPTNO);
+ 
+SELECT * FROM emp WHERE sal =
+
+( SELECT max(sal) FROM emp WHERE sal < 
+
+( SELECT max(sal) FROM EMP));
+
+
+Mongo: C++
+		2007
+		
+		not only SQl
+		
+		
+		document
+		graph
+		key value
+
+Docker :-
+
+
+VM
+
+it was working in my machine
+
+
+		VM
+		
+		
+		
+		
+
+	main macihne 
+	
+docker compnents
+
+	docker client,server
+	docker image
+	docker reigstry
+	docker container
+	
+	communication between docker client,docker host using REST API
+	
+	docker image :its template that containse instructions for the docker container
+				template we will write using language YAML(Yet Another Markup language)
+
+docker image instructions:
+=========================
+
+	from
+	pull
+	run
+	cmd
+	
+	repository:collection of docker images
+
+dcoker compose
+docker swarm
+
+docker commands:
+=================
+	docker -v						 to know the version docker which is installed 
+	docker ps  						 will show all running docker container s
+	docker ps -a 					 will show all docker containers
+	docker run imagename:tagname     to run docker container 
+	docker run -it imagename:tagname run container and connecct to it 
+	docker run -d imagename:tagname  run a container in the background
+	docker stop containerid			 to stop container	
+	docker kill container 			 to kill container
+
+	docker images						list available images
+	docker search imagename			to search an image
+	docker pull imagename 			to pull an image
+
+	docker rmi "image id/name"       to remove an image
+	docker rm "container id/name"       to remove a  container 
+	
+	docker ps -->list containers only which are running 
+
+	docker ps -a -->list all 
+
+	docker start "container id" -->to start container
+
+	docker stop "container id" -->to stop container 
+
+	docker run "image name" -->to run docker image 
+
+	docker image ls -->to get list of images 
+
+	docker rmi "id of image"-->to remove image
+
+	docker rm "id of container"--to remove container  
 
 
 
-
-
-
-
+ 	
 
 
 

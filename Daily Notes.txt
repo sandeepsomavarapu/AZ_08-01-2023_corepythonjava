@@ -1807,19 +1807,109 @@ docker commands:
 	docker rm "id of container"--to remove container  
 
 
-
+Devops Tools
  	
 
+	Architecture:
+	
+		Automation
+		configuration management
+		integration
+		collaboration
+
+Jenkins
+	continuous  integration
+
+	CI/CD
+	jenkins pipeline is a combination of plugins that supports integration and
+	implementation continuous delivery pipelines
+	
+	a pipeline is group of events interlinked with each other in a sequence
+	
+		build==>test==>deploy===>release
+		
+	JenkinsFile:jenkins pipelines can be defined by using text file i.e JenkinsFile
+
+	DSL(domain specific language)
+
+	
+	JenkinsFile can be defined by either web ui or with jenkins file
+	
+	
+	
+	Why Jenkins Pipeline:
+	
+	Scripted pipelines terminologies
+		pipeline
+		node
+		stage
+		step
+	Declarative pipelines terminologies
+		pipeline
+		agent
+		stage
+		step
+		
+		
+		Build Pipeline  Version
+
+	
+	two types of pipelines
+	
+			1)declartive 		:WE WILL WRITE GROOVY CODE CONTAINING "PIPELINE BLOCKS" WHICH IS CHECKED INT SCM
+			2)scripsted pipeline:WE WILL WRITE FROVY CODE WHERE THE CODE IS DEFINED INSIDE "NODE"
+	
+ 1)declartive 	
+	
+		pipeline:Block of all instructions to build,test,deliver a software
+		agent	:assigned to execute the pipeline  on a node and allocate a workspace for the pipeline
+		stage	:stage is a block that has steps to build,test,deploy 
+				the app stages are used to visualize the jenkins pipeline process
+		step   :step will have task to perform like run docker image,create a file,delete a file
 
 
-
-
-
-
- 
-
-
-
+pipeline {
+         agent any
+         stages {
+                 stage('Build') {
+                 steps {
+                     echo 'Hi, AstraZeneca. Starting to build the App.'
+                 }
+                 }
+                 stage('Test') {
+                 steps {
+                    input('Do you want to proceed?')
+                 }
+                 }
+                 stage('Deploy') {
+                 parallel { 
+                            stage('Deploy start ') {
+                           steps {
+                                echo "Start the deploy .."
+                           } 
+                           }
+                            stage('Deploying now') {
+                            agent {
+                                    docker {
+                                            reuseNode true
+                                            image ‘nginx’
+                                           }
+                                    }
+                            
+                              steps {
+                                echo "Docker Created"
+                              }
+                           }
+                           }
+                           }
+                 stage('Prod') {
+                     steps {
+                                echo "App is Prod Ready"
+                              }
+                 
+              }
+}
+}
 
 
 

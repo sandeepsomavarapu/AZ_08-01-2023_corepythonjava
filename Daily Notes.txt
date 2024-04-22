@@ -2062,18 +2062,83 @@ Commands:
 		
 		
 		
+	DOCKER VOLUMES	
+			
+			VOLUMES ARE STORED IN A PART OF THE HOST FILE SYSTEM
+			
+	BIND MOUNTS
+
+	
+		DOOCKER VOLUME PRUNE
 		
+		DOCKER VOLUME CREATE []
 		
+		docker volume create demo_volume
 		
+		Docker house keeping 
 		
+			this includes removing any no longer required containers,images,columes,networks...
+			
+			
+			
+			remove unused contianers
+			docker container prune
+			docker image prune
+			docker volume prune
+			docker network prune
+			docker system prune
 		
-		
-		
-		
-		
-		
-		
-		
+	
+Microservices:
+==============
+	decompose/split/devide large smaller services and later provide communication between services
+
+
+	independently deployable
+	scalling up scalling down	
+	independent DB
+	independent server 
+	size less
+	indepednet jar/war
+
+
+kubernetes:
+===========
+
+
+	k8s borg omega 
+	2014
+
+
+
+Orchestration
+
+	* configurig  and scheduling of container 
+	
+	* provisioning ad deployments of containers
+	
+	* high availability of containers 
+	
+	* configuration of the apps that run in containers
+	
+	* scalling of containers 
+	
+	* Allocation of HW resources between containers
+	
+	* Load Balancing 
+	
+	* Health montiring of containers
+	
+	* securing the intractions between the containers
+
+docker swarm
+mesos
+normand
+cloud foundary
+cattel
+cloud 
+
+	
 		
 		
 		
